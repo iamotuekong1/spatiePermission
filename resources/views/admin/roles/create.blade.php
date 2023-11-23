@@ -17,6 +17,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                @error('name')
+                                <span class="text-red-400 text-sm">{{ $message }}</span>
+                                @enderror
                                 <div class="mt-6 flex items-center justify-start gap-x-6 px-1">
                                     <button type="button" onclick="window.location.href='{{ route('admin.roles.index') }}'" class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-200 dark:bg-gray-800">Cancel</button>
                                     <button type="submit" class="rounded-md bg-blue-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Create</button>
