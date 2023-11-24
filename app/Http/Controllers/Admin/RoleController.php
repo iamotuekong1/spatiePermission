@@ -39,6 +39,6 @@ class RoleController extends Controller
         $validated = $request->validate(['name' => ['required', 'min:3']]);
         $role->update($validated);
 
-        return redirect()->route('admin.roles.index');
+        return redirect()->route('admin.roles.index')->with('message', 'Role updated successffully');
     }
 }

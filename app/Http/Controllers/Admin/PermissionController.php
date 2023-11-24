@@ -39,6 +39,6 @@ class PermissionController extends Controller
         $validated = $request->validate(['name' => ['required', 'min:3']]);
         $permission->update($validated);
 
-        return redirect()->route('admin.permissions.index');
+        return redirect()->route('admin.permissions.index')->with('message', 'Permission updated successffully');
     }
 }
