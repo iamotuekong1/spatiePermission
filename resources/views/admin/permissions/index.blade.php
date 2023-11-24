@@ -111,10 +111,14 @@
                             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg px-4">
                                 {{ $permission->name }}
                             </div>
-                            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg px-4">
+                            <div class="flex justify-between bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg px-4">
                                 <a href="{{ route('admin.permissions.edit', $permission->id) }}">Edit</a>
-                                <span> | </span>
-                                <a href="">Delete</a>
+                                <span class="mx-2"> | </span>
+                                <form method="POST" action="{{ route('admin.permissions.destroy', $permission->id) }}" onsubmit="return confirm('Are you sure?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit">Delete</button>
+                                </form>
                             </div>
                         </li>
                     @endforeach
