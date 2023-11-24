@@ -112,7 +112,7 @@
                                 {{ $permission->name }}
                             </div>
                             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg px-4">
-                                <a href="">Edit</a>
+                                <a href="{{ route('admin.permissions.edit', $permission->id) }}">Edit</a>
                                 <span> | </span>
                                 <a href="">Delete</a>
                             </div>

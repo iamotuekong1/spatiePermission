@@ -12,7 +12,7 @@
                                 {{ $role->name }}
                             </div>
                             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg px-4">
-                                <a href="">Edit</a>
+                                <a href="{{ Route('admin.roles.edit', $role->id) }}">Edit</a>
                                 <span> | </span>
                                 <a href="">Delete</a>
                             </div>
