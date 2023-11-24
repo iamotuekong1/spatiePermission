@@ -25,7 +25,7 @@ class PermissionController extends Controller
         $validated = $request->validate(['name' => ['required', 'min:3']]);
         Permission::create($validated);
 
-        return redirect()->route('admin.permissions.index');
+        return redirect()->route('admin.permissions.index')->with('message', 'Permission created successffully');
     }
 
     public function edit(Permission $permission)
