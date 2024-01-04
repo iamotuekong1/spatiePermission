@@ -31,10 +31,14 @@
                     </li>
                     <li class="mt-6 px-4 py-2">
                         <h3 class="text-1xl font-semiBold">Role Permissions</h3>
-                        <div class="mb-3">
+                        <div class="mb-3 mt-2">
                             @if ($role->permissions)
                                 @foreach ($role->permissions as $role_permission)
-                                    <spa>{{ $role_permission->name }}</spa>
+                                <form method="POST" action="{{ route('admin.roles.permissions.revoke', [$role->id, $role_permission->id]) }}" onsubmit="return confirm('Are you sure?')" class="inline-block">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="rounded-md bg-gray-100 border border-gray-300 hover:border-gray-400 dark:bg-gray-700 dark:border-gray-600 dark:hover:border-gray-500 px-3 py-2 text-sm">{{ $role_permission->name }}</button>
+                                </form>
 
                                 @endforeach
 

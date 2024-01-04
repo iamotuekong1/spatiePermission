@@ -53,9 +53,18 @@ class RoleController extends Controller
     public function givePermission(Request $request, Role $role)
     {
         if($role->hasPermissionTo($request->permission)) {
-            return redirect()->route('admin.roles.index')->with('message', 'Permission already exist');
+            return redirect()->back()->with('message', 'Permission already exist');
         }
         $role->givePermissionTo($request->permission);
-        return redirect()->route('admin.roles.index')->with('message', 'Permission Added');
+        return redirect()->back()->with('message', 'Permission Added');
+    }
+
+    public function revokePermission(Role $role, Permission $permission)
+    {
+        if($role->hasPermissionTo($permission)) {
+            $role->revokePermissionTo($permission);
+            return redirect()->back()->with('message', 'Permission revoked');
+        }
+        return redirect()->back()->with('message', 'Permission does not exist');
     }
 }
