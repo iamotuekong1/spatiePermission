@@ -2,7 +2,7 @@
     <div class="py-12 w-full">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <ul role="list" class="divide-y divide-gray-100 dark:divide-gray-900">
+                <ul role="list" class="divide-y-8 divide-gray-100 dark:divide-gray-900">
                     <li class="flex justify-between gap-x-6 py-2">
                         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg px-4">
                             <form method="POST" action="{{ route('admin.roles.update', $role) }}">
